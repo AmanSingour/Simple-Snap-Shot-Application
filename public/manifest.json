@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SnapShot App",
+  "name": "Simple Snap Shot Application Using React JS",
   "icons": [
     {
       "src": "favicon.ico",
