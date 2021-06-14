@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Redirect, Route } from 'react-router-dom'
+import { _routes } from '../utils'
 
 //? COMPONENT THAT RETURNS ALL PUBLIC ROUTES
 const PublicRoute = ({component: Component, restricted, ...rest}) => {
