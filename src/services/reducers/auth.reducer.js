@@ -1,7 +1,7 @@
 import { 
     LOGIN_SUCCESS, 
     LOGOUT 
-} from "../../utils/__actionType";
+} from "../../utils/data/__actionType";
 
 export const authReducer = (
     state = { loggedIn: false, user: null },
