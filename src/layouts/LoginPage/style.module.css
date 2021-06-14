@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=style.module.css.map */
+.center, .Container {
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.vertical-center, .Container .Form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.Container {
+  width: 70%;
+  height: 100vh;
+  color: #353535;
+}
+
+.Container .Form {
+  width: 400px;
+}
+
+.Container .Form h2 {
+  text-align: left;
+}
+
+.Container .Form .InputField {
+  text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+  .Container .Form {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.module.css.map */
