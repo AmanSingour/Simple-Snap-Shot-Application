@@ -18,12 +18,12 @@ const validate = ({ name, value }) => {
       return "";
 
     case "name":
-      if (value && value.match(nameRegex)) return "Please enter valid name!";
+      if (value && !value.match(nameRegex)) return "Please enter valid name!";
       else if (!value) return "Name required!";
       return "";
 
     case "password":
-      if (value && value.match(pwdRegex)) return "Password must be of length 6";
+      if (value && !value.match(pwdRegex)) return "Password must be atleast length of 6";
       else if (!value) return "Password required!";
       return "";
 
