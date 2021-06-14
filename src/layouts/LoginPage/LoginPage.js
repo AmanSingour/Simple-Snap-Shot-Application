@@ -78,13 +78,15 @@ export const LoginPage = () => {
             </Form.Input>
           </Form.Field>
           <Form.Field className={style.Button}>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={
                 Object.values(inputs).includes("") ||
                 Object.values(errors).find((e) => e !== "")
               }
-              positive onClick={(e) => handleSubmit(e)}>
+              positive
+              onClick={(e) => handleSubmit(e)}
+            >
               LOGIN
             </Button>
           </Form.Field>
