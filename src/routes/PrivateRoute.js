@@ -1,5 +1,7 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Redirect, Route } from 'react-router-dom'
+import { _routes } from '../utils'
 
 //? COMPONENT THAT TAKED GUARENTEE TO SECURE PRIVATE ROUTES
 const PrivateRoute = ({component: Component, ...rest}) => {
@@ -8,7 +10,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
 
     return(
         //* COMPONENT WILL ONLY RENDER IF USER IS LOGGED IN
-        //* USER WILL REDIRECTED TO LOGIN PAGE
+        //* ELSE USER WILL REDIRECTED TO LOGIN PAGE
         <Route 
             {...rest}
             render={(props) =>
