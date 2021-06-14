@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux'
 import { Redirect, Route } from 'react-router-dom'
 
 //? COMPONENT THAT RETURNS ALL PUBLIC ROUTES
-const PublicPrivateRoute = ({component: Component, restricted, ...rest}) => {
+const PublicRoute = ({component: Component, restricted, ...rest}) => {
     
     const {loggedIn} = useSelector(state => state.auth)
 
     return(
-        //* COMPONENT WILL ONLY RENDER IF USER IS NOT LOGGED IN && NOT Restricted
+        //* COMPONENT WILL ONLY RENDER IF USER IS NOT LOGGED IN && NOT RESTRICTED
+        //* IN THE CASE OF LOGOUT RESTRICTION WILL USE
         //* ELSE USER WILL REDIRECTED TO HOME PAGE
         <Route 
             {...rest}
@@ -21,4 +22,4 @@ const PublicPrivateRoute = ({component: Component, restricted, ...rest}) => {
     )
 }
 
-export default PublicPrivateRoute
+export default PublicRoute
