@@ -6,6 +6,12 @@ import {_routes} from '../utils'
 import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute'
 
+import {
+  HomePage,
+  LoginPage,
+  SignupPage
+} from '../layouts'
+
 //? ALL ROUTES USED IN APP ARE DEFINED HERE...
 const Routes = () => {
   return (
