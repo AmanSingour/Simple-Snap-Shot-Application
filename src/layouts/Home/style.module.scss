@@ -3,4 +3,6 @@
 .Container{
     @extend .center;
     padding: 3rem;
+    height: 100vh;
+    max-height: 100vh;
 }

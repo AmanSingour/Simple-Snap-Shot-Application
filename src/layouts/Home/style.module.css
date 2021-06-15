@@ -19,5 +19,7 @@
 
 .Container {
   padding: 3rem;
+  height: 100vh;
+  max-height: 100vh;
 }
 /*# sourceMappingURL=style.module.css.map */
