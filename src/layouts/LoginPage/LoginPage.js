@@ -1,8 +1,14 @@
 import React from "react";
-import { Icon, Button, Form, Header } from "semantic-ui-react";
+import { Icon, Button, Form, Header, Message } from "semantic-ui-react";
 import style from "./style.module.css";
 
 import { validateInputs, validateForm } from "../../services";
+import { doLogin } from "../../services/actions";
+import { useDispatch } from "react-redux";
+
+import { _routes } from "../../utils";
+
+import history from "../../config/history";
 
 // THIS IS LOGIN PAGE ACCESSABLE BY ALL USERS
 export const LoginPage = () => {
@@ -17,6 +23,11 @@ export const LoginPage = () => {
     password: "",
   });
 
+  const [res, setRes] = React.useState("");
+
+  // REDUX DISPATCH
+  const dispatch = useDispatch();
+
   // THIS IS A SINGLE METHOD TO HANDLE INPUT CHANGE
   const handleChange = (e) => {
     // SETTING CURRENT INPUT VALUE
@@ -29,20 +40,30 @@ export const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // API CALL......
+    var res = dispatch(doLogin(inputs));
+    if (res.status === 200) {
+      history.push(_routes.HOME);
+    } else {
+      setRes(res.message);
+    }
   };
 
   // METHOD TO VALIDATE FORM WITH MEMOIZED VALUE
-  const memoizeValidate = React.useMemo(() =>{ 
-    console.log("Memo call")
-    return validateForm(inputs)(errors)}, [inputs, errors]);
+  const memoizeValidate = React.useMemo(() => {
+    console.log("Memo call");
+    return validateForm(inputs)(errors);
+  }, [inputs, errors]);
 
   return (
     <>
       <div className={style.Container}>
         {/* I'VE USED SEMANTIC UI COMPONENTS */}
-        <Form className={style.Form}>
+        <Form className={style.Form} error={res !== ""}>
           <Header as="h2">Login</Header>
           <br />
+          {res && (
+            <Message error header="Action Forbidden" content={res} />
+          )}
           <Form.Field className={style.InputField}>
             {/* <label>Username</label> */}
             <Form.Input
