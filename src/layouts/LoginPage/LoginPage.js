@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { _routes } from "../../utils";
 
 import history from "../../config/history";
+import { Link } from "react-router-dom";
 
 // THIS IS LOGIN PAGE ACCESSABLE BY ALL USERS
 export const LoginPage = () => {
@@ -23,6 +24,7 @@ export const LoginPage = () => {
     password: "",
   });
 
+  // TO STORE API CALL RESPONSE
   const [res, setRes] = React.useState("");
 
   // REDUX DISPATCH
@@ -113,6 +115,7 @@ export const LoginPage = () => {
               LOGIN
             </Button>
           </Form.Field>
+          <label>Don't have an account?<Link to={_routes.SIGNUP} >Signup</Link></label>
         </Form>
       </div>
     </>
