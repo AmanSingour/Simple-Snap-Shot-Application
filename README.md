@@ -16,7 +16,7 @@ In the project directory, you can run:
 
 - [x] React Router
 
-- [ ] React Hooks
+- [x] React Hooks
 
 - [ ] Context API
 
@@ -32,7 +32,7 @@ In the project directory, you can run:
 
 - [ ] Api call using redux
 
-- [ ] Login page with default credentials
+- [x] Login page with default credentials
 
 - [x] Form Validation
 
