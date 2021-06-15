@@ -1,0 +1,6 @@
+@import '../../common';
+
+.Container{
+    @extend .center;
+    padding: 3rem;
+}
