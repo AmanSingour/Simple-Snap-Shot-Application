@@ -10,7 +10,7 @@ In the project directory, you can run:
 
 - [x] Signup Screen - /signup
 
-- [ ] Home Screen - /home (Route Protected)
+- [x] Home Screen - /home (Route Protected)
 
 ### Build
 
@@ -18,19 +18,19 @@ In the project directory, you can run:
 
 - [x] React Hooks
 
-- [ ] Context API
+- [x] Context API
 
-- [ ] Flickr API
+- [x] Flickr API
 
 ### Features
 
-- [ ] Responsive Design.
+- [x] Responsive Design.
 
-- [ ] Search functionality added to search photos from API
+- [x] Search functionality added to search photos from API
 
 - [ ] Unit Testing (jest/cypress )
 
-- [ ] Api call using redux
+- [x] Api call using redux
 
 - [x] Login page with default credentials
 
