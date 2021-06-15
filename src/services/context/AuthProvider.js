@@ -8,14 +8,17 @@ class AuthProvider extends React.Component {
     super(props);
 
     this.state = {
-      username: null,
+      username: null
     };
   }
 
-  componentDidMount() {
-    var user = JSON.parse(sessionStorage.getItem("user"));
-    if (user === null) history.push(_routes.LOGIN);
-    else this.setState({ username: user.name });
+  static getDerivedStateFromProps(props, state) {
+    if(props.user !== null) {
+      return{
+        username: props.user.name
+      }
+    }
+    return state
   }
 
   render() {

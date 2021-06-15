@@ -5,25 +5,17 @@ import Routes from "../routes";
 import "./App.css";
 
 import { LOGIN_FAILD, LOGIN_SUCCESS } from "../utils/data/__actionType";
-import { useDispatch } from "react-redux";
-import {AuthProvider} from "../services/context";
+import { useDispatch, useSelector } from "react-redux";
+import { AuthProvider } from "../services/context";
 
 function App() {
-  const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    let user = null;
-    try {
-      user = JSON.parse(sessionStorage.getItem("user"));
-      if (user) dispatch({ type: LOGIN_SUCCESS, payload: user });
-    } catch (e) {
-      dispatch({ type: LOGIN_FAILD });
-    }
-  }, []);
+  const user = useSelector(state => state.auth.user)
+
   return (
     <div className="App">
       <Container>
-        <AuthProvider>
+        <AuthProvider user={user}>
           <Router>
             <Routes />
           </Router>

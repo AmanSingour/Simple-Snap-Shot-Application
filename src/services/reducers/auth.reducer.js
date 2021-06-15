@@ -3,8 +3,31 @@ import {
     LOGOUT 
 } from "../../utils/data/__actionType";
 
+const loadState = () => {
+  try {
+    const user = sessionStorage.getItem("user");
+    if (user === null)
+      return {
+        loggedIn: false,
+        user: null,
+      };
+    return {
+      loggedIn: true,
+      user: JSON.parse(user),
+    };
+  } catch (e) {
+    return {
+      loggedIn: false,
+      user: null,
+    };
+  }
+};
+
+const initialState = loadState();
+
+
 export const authReducer = (
-    state = { loggedIn: false, user: null },
+    state=initialState,
     action
   ) => {
     switch (action.type) {
