@@ -15,6 +15,7 @@ const doLogin = ({ email, password }) => {
       localStorage.setItem("users", "[]");
     } finally {
       const user = Users.find((user) => user.email === email);
+
       if (!user) {
         return { status: 404, message: "User not found!" };
       } else if (user.password === password) {
