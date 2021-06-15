@@ -1,0 +1,12 @@
+@import '../../common';
+
+.Container{
+    @extend .center;
+    padding-top: 2rem;
+    width: $container-width;
+
+    .Labels{
+        width: 100%;
+        padding: 1rem 0;
+    }
+}
