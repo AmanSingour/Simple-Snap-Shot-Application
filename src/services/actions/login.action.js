@@ -7,10 +7,10 @@ const loginSuccess = (user) => ({
 });
 
 const doLogin = ({ email, password }) => {
-  const Users = [..._defaultUser];
+  var Users = [..._defaultUser];
   return (dispatch) => {
     try {
-      Users.concat(JSON.parse(localStorage.getItem("users")));
+      Users = JSON.parse(localStorage.getItem("users")).concat(Users);
     } catch (e) {
       localStorage.setItem("users", "[]");
     } finally {
