@@ -2,7 +2,7 @@ import React from "react";
 import { Icon, Button, Form, Header } from "semantic-ui-react";
 import style from "./style.module.css";
 
-import { validate } from "../../services";
+import { validateForm, validateInputs as validate } from "../../services";
 
 // THIS IS Signup PAGE ACCESSABLE BY ALL USERS
 export const SignupPage = () => {
@@ -41,6 +41,12 @@ export const SignupPage = () => {
     e.preventDefault();
     // API CALL......
   };
+
+  // METHOD TO VALIDATE FORM WITH MEMOIZED VALUE
+  const memoizeValidate = React.useMemo(() => {
+    console.log("Memo call");
+    return validateForm(inputs)(errors);
+  }, [inputs, errors]);
 
   return (
     <>
@@ -130,10 +136,7 @@ export const SignupPage = () => {
           <Form.Field className={style.Button}>
             <Button
               type="submit"
-              disabled={
-                Object.values(inputs).includes("") ||
-                Object.values(errors).find((e) => e !== "")
-              }
+              disabled={memoizeValidate}
               positive
               onClick={(e) => handleSubmit(e)}
             >
