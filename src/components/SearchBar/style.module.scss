@@ -8,5 +8,17 @@
     .Labels{
         width: 100%;
         padding: 1rem 0;
+
+        .Label{
+            margin: 0.5rem;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .Container{
+        width: 100%;
     }
 }

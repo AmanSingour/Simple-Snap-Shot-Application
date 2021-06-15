@@ -26,4 +26,14 @@
   width: 100%;
   padding: 1rem 0;
 }
+
+.Container .Labels .Label {
+  margin: 0.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .Container {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=style.module.css.map */
