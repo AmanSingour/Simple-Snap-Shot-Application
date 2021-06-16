@@ -13,7 +13,7 @@ function App() {
   const user = useSelector(state => state.auth.user)
 
   return (
-    <div className="App">
+    <div className="App" data-testid="app">
       <Container>
         <AuthProvider user={user}>
           <Router>

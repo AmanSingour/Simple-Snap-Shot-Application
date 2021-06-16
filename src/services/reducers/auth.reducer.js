@@ -1,4 +1,5 @@
 import { 
+  LOGIN_FAILD,
     LOGIN_SUCCESS, 
     LOGOUT 
 } from "../../utils/data/__actionType";
@@ -33,14 +34,13 @@ export const authReducer = (
     switch (action.type) {
       case LOGIN_SUCCESS:
         return {
-          ...state,
+          ...state, 
           user: action.payload,
           loggedIn: true,
         };
   
-      case LOGOUT:
+      case LOGIN_FAILD:
         return {
-          ...state,
           user: null,
           loggedIn: false,
         };

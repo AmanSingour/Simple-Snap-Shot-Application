@@ -28,7 +28,7 @@ In the project directory, you can run:
 
 - [x] Search functionality added to search photos from API
 
-- [ ] Unit Testing (jest/cypress )
+- [x] Unit Testing (jest/cypress )
 
 - [x] Api call using redux
 

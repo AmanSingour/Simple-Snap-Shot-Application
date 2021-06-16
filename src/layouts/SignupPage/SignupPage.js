@@ -62,7 +62,7 @@ export const SignupPage = () => {
 
   return (
     <>
-      <div className={style.Container}>
+      <div className={style.Container} data-testid="signup">
         {/* I'VE USED SEMANTIC UI COMPONENTS */}
         <Form
           className={style.Form}
@@ -82,7 +82,7 @@ export const SignupPage = () => {
           <Form.Field className={style.InputField}>
             <Form.Input
               iconPosition="left"
-              placeholder="Username or Email"
+              placeholder="Email"
               type="email"
               name="email"
               required
@@ -94,7 +94,7 @@ export const SignupPage = () => {
               }
             >
               <Icon name="at" />
-              <input required onChange={(e) => handleChange(e)} />
+              <input required onBlur={(e) => handleChange(e)}  onChange={(e) => handleChange(e)} />
             </Form.Input>
           </Form.Field>
           <Form.Field className={style.InputField}>
@@ -112,7 +112,7 @@ export const SignupPage = () => {
               }
             >
               <Icon name="user" />
-              <input required onChange={(e) => handleChange(e)} />
+              <input required onBlur={(e) => handleChange(e)}  onChange={(e) => handleChange(e)} />
             </Form.Input>
           </Form.Field>
           <Form.Field className={style.InputField}>
@@ -122,6 +122,7 @@ export const SignupPage = () => {
               required
               type="password"
               name="password"
+              onBlur={(e) => handleChange(e)} 
               onChange={(e) => handleChange(e)}
               error={
                 errors.password !== "" && {
@@ -141,6 +142,7 @@ export const SignupPage = () => {
               required
               type="password"
               name="conf_password"
+              onBlur={(e) => handleChange(e)} 
               onChange={(e) => handleChange(e)}
               error={
                 errors.conf_password !== "" && {

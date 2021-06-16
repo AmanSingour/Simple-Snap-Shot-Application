@@ -11,6 +11,7 @@ import {
   LoginPage,
   SignupPage
 } from '../layouts'
+import Logout from "../components/Logout";
 
 //? ALL ROUTES USED IN APP ARE DEFINED HERE...
 const Routes = () => {
@@ -24,7 +25,7 @@ const Routes = () => {
       {/* {restricted} IS USED TO RESTRICT USER IF ALREADY LOGGED IN */}
       <PublicRoute path={_routes.LOGIN} component={LoginPage} restricted />
       <PublicRoute path={_routes.SIGNUP} component={SignupPage} restricted />
-      <PublicRoute path={_routes.LOGOUT} component={SignupPage}  />
+      <PublicRoute path={_routes.LOGOUT} component={Logout}  />
 
     </Switch>
   );

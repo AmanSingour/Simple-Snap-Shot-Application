@@ -9,24 +9,23 @@ const imgUrl = ({ farm, server, id, secret }) =>
 
 //? THIS IS IMAGE VIEW COMPONENT...
 export const ImageView = ({ data }) => {
-
-React.useEffect(() => {
-    
-}, [data])
+  React.useEffect(() => {}, [data]);
 
   const Images = data.map((e, index) => (
-    <Grid.Column  key={index}>
-      <Image src={imgUrl(e)} alt="" size='large' />
+    <Grid.Column key={index}>
+      <Image src={imgUrl(e)} alt="" size="large" />
     </Grid.Column>
   ));
 
   return (
     <>
-      <div >
-        {data && (
-          <StackGrid >
-              {Images}
-          </StackGrid>
+      <div>
+        {data.length ? (
+          <div>
+            <StackGrid>{Images}</StackGrid>
+          </div>
+        ) : (
+          <h2 style={{ marginTop: "10%" }}>No Image Found :(</h2>
         )}
       </div>
     </>

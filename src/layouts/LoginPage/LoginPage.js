@@ -58,9 +58,11 @@ export const LoginPage = () => {
 
   return (
     <>
-      <div className={style.Container}>
+      <div className={style.Container} data-testid='login'>
         {/* I'VE USED SEMANTIC UI COMPONENTS */}
-        <Form className={style.Form} error={res !== ""}>
+        <Form className={style.Form}
+          data-testid='login-form'
+         error={res !== ""}>
           <Header as="h2">Login</Header>
           <br />
           {res && (
@@ -70,7 +72,7 @@ export const LoginPage = () => {
             {/* <label>Username</label> */}
             <Form.Input
               iconPosition="left"
-              placeholder="Username or Email"
+              placeholder="Email"
               type="email"
               name="email"
               required
@@ -82,7 +84,7 @@ export const LoginPage = () => {
               }
             >
               <Icon name="at" />
-              <input required onChange={(e) => handleChange(e)} />
+              <input required onBlur={(e) => handleChange(e)} onChange={(e) => handleChange(e)} />
             </Form.Input>
           </Form.Field>
           <Form.Field className={style.InputField}>
@@ -93,6 +95,7 @@ export const LoginPage = () => {
               required
               type="password"
               name="password"
+              onBlur={(e) => handleChange(e)}
               onChange={(e) => handleChange(e)}
               error={
                 errors.password !== "" && {
