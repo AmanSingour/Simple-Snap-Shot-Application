@@ -1,5 +1,8 @@
 {
   "name": "snapshot-app",
+  "jest": {
+    "verbose": true
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,11 +48,9 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.5",
-    "@testing-library/react": "^11.2.7",
-    "babel-jest": "^27.0.2",
-    "enzyme": "^3.11.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-jest": "^26.6.0",
     "jest": "^27.0.4",
-    "jest-dom": "^4.0.0",
     "react-test-renderer": "^17.0.2"
   }
 }
